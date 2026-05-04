@@ -1,1 +1,218 @@
+:root {
+  /* Primary Colors */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --blue: hsl(212, 86%, 64%);
+  --orange: hsl(34, 97%, 64%);
 
+  /* Neutrals */
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(212, 6%, 44%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Typography Scale */
+  --fs-body: 0.9375rem; /* 15px */
+  --fs-h1: 1.5rem; /* 24px Mobile */
+  --fs-h1-desktop: 2.25rem; /* 36px Desktop */
+  --fs-card-title: 1.25rem; /* 20px */
+
+  /* Font weights */
+  --weight-light: 200;
+  --weight-regular: 400;
+  --weight-bold: 600;
+
+  --font-family: "Poppins", sans-serif;
+
+  /* Spacing Scale */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 4rem; /* 64px */
+
+  /* Structural Spacing */
+  --sp-header-mb: var(--space-xl);
+  --sp-grid-gap: 1.875rem;
+  --sp-card-p: 1.875rem;
+  --sp-icon-mt: 2.5rem;
+
+  /* Layout Constants */
+  --card-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
+  --border-radius: 8px;
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE STYLES (Mobile First) */
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  background-color: var(--very-light-gray);
+  color: var(--grayish-blue);
+  line-height: 1.6;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-block-end: var(--sp-header-mb);
+  max-width: 540px;
+}
+
+.header h1 {
+  font-weight: var(--weight-light);
+  color: var(--very-dark-blue);
+  font-size: var(--fs-h1);
+}
+
+.header h2 {
+  font-weight: var(--weight-bold);
+  color: var(--very-dark-blue);
+  font-size: var(--fs-h1);
+  margin-block-end: var(--space-sm);
+}
+
+/* CARD GRID (Mobile First = Single Column) */
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-grid-gap);
+  width: 100%;
+  max-width: 350px;
+}
+
+/* CARD STYLING */
+.card {
+  background-color: var(--white);
+  padding: var(--sp-card-p);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  border-top: none;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.015) translateZ(0);
+  box-shadow: 0 20px 40px -10px var(--glow-color);
+  cursor: pointer;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.25rem;
+  background-color: var(--accent-color);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  transition: height 0.3s ease;
+}
+
+.card:hover::before {
+  height: 8px;
+}
+
+.card h3 {
+  color: var(--very-dark-blue);
+  font-weight: var(--weight-bold);
+  font-size: var(--fs-card-title);
+  margin-block-end: var(--space-xs);
+}
+
+.card p {
+  opacity: 0.6;
+  font-size: 0.85rem;
+}
+
+.card img {
+  display: block;
+  margin-inline-start: auto;
+  margin-block-start: var(--sp-icon-mt);
+}
+
+/* Top Borders */
+.cyan {
+  --accent-color: var(--cyan);
+  --glow-color: hsla(180, 62%, 55%, 0.4);
+}
+
+.red {
+  --accent-color: var(--red);
+  --glow-color: hsla(0, 78%, 62%, 0.4);
+}
+
+.orange {
+  --accent-color: var(--orange);
+  --glow-color: hsla(34, 97%, 64%, 0.4);
+}
+
+.blue {
+  --accent-color: var(--blue);
+  --glow-color: hsla(212, 86%, 64%, 0.4);
+}
+
+/* DESKTOP (Unlocked via Grid) */
+@media (min-width: 950px) {
+  body {
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .header h1,
+  .header h2 {
+    font-size: var(--fs-h1-desktop);
+  }
+  
+  .card-grid {
+    display: grid;
+    max-width: 1110px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr); 
+    align-items: center;
+  }
+
+  .supervisor {
+    grid-column: 1;
+    grid-row: 2 / span 2; 
+  }
+
+  .team-builder {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .karma {
+    grid-column: 2;
+    grid-row: 3 / span 2;
+  }
+
+  .calculator {
+    grid-column: 3;
+    grid-row: 2 / span 2;
+  }
+}
