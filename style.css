@@ -145,7 +145,7 @@ body {
 
 .card h3 {
   color: var(--very-dark-blue);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-regular);
   font-size: var(--fs-card-title);
   margin-block-end: var(--space-xs);
 }
