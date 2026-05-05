@@ -32,6 +32,7 @@
   --space-md: 1.5rem; /* 24px */
   --space-lg: 2rem; /* 32px */
   --space-xl: 4rem; /* 64px */
+  --space-xxl: 5rem; /* 80px */
 
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
@@ -66,7 +67,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-md) var(--space-md);
 }
 
 /* HEADER */
@@ -100,6 +101,7 @@ body {
 
 .header p {
   line-height: 1.5;
+  max-width: 32rem;
   margin-inline: auto;
 }
 
@@ -107,9 +109,12 @@ body {
 .card-grid {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: var(--sp-grid-gap);
   width: 100%;
   max-width: 22rem;
+  margin-inline: auto;
 }
 
 /* CARD STYLING */
@@ -203,14 +208,19 @@ body {
     min-height: 100vh;
     height: auto;
   }
+  
+  .header {
+  margin-block-end: var(--space-xxl); /* 80px for desktop */
+}
 
   .card-grid {
     display: grid;
     max-width: 70rem;
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(3, 20rem);
     grid-template-rows: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
+    align-items: stretch;
   }
 
   .supervisor {
