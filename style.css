@@ -6,8 +6,8 @@
   --blue: hsl(212, 86%, 64%);
 
   /* Neutrals */
-  --dark-grey: hsl(234, 12%, 34%);
-  --light-grey: hsl(212, 6%, 44%);
+  --dark-gray: hsl(234, 12%, 34%);
+  --light-gray: hsl(212, 6%, 44%);
   --very-light-gray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
 
@@ -32,7 +32,7 @@
   --space-md: 1.5rem; /* 24px */
   --space-lg: 2rem; /* 32px */
   --space-xl: 4rem; /* 64px */
-  --space-xxl: 5rem; /* 80px */
+  --space-xxl: 6rem; /* 96px */
 
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
@@ -67,7 +67,7 @@ body {
   font-family: var(--font-family);
   font-size: var(--fs-body);
   background-color: var(--very-light-gray);
-  color: var(--light-grey);
+  color: var(--light-gray);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -92,14 +92,14 @@ body {
 
 .header h1 {
   font-weight: var(--weight-light);
-  color: var(--light-grey);
+  color: var(--light-gray);
   font-size: var(--fs-h1);
   margin-block-end: var(--sp-h1-mb);
 }
 
 .header h2 {
   font-weight: var(--weight-bold);
-  color: var(--dark-grey);
+  color: var(--dark-gray);
   font-size: var(--fs-h1);
   margin-block-start: 0;
   margin-block-end: var(--sp-h2-mb);
@@ -109,7 +109,6 @@ body {
   line-height: 1.5;
   max-width: 32rem;
   margin-inline: auto;
-  font-weigth: var(--weight-bold);
 }
 
 /* CARD GRID (Mobile First = Single Column) */
@@ -126,20 +125,25 @@ body {
 
 /* CARD STYLING */
 .card {
-  display: flex;
-  flex-direction: column;
   background-color: var(--white);
-  padding: var(--sp-card-p);
   border-radius: var(--border-radius);
   box-shadow: var(--card-shadow);
   position: relative;
-  border-top: none;
   overflow: hidden;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   will-change: transform, box-shadow;
   transform: translateZ(0);
   transition: var(--tr-card);
+}
+
+.card-link {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-card-p);
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card:hover {
@@ -164,6 +168,7 @@ body {
   background-color: var(--accent-color);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   transition: var(--tr-before);
+  z-index: 1;
 }
 
 .card:hover::before {
@@ -171,18 +176,20 @@ body {
 }
 
 .card h3 {
-  color: var(--dark-grey);
+  color: var(--dark-gray);
   font-weight: var(--weight-bold);
   font-size: var(--fs-card-title);
   margin-block-end: var(--space-xxs);
 }
 
 .card p {
-  font-size: 0.85rem;
+  font-size: clamp(0.8125rem, 0.79rem + 0.1vw, 0.9375rem);
 }
 
 .card img {
   display: block;
+  width: clamp(3rem, 1rem + 8vw, 5rem);
+  height: auto;
   margin-inline-start: auto;
   margin-block-start: auto;
   padding-block-start: var(--space-md);
@@ -213,9 +220,9 @@ body {
 /* DESKTOP (Unlocked via Grid) */
 @media (min-width: 60rem) {
   body {
-    padding: var(--space-xxl) var(--space-md);  
+    padding: var(--space-xxl) var(--space-md);
   }
-  
+
   .card-grid {
     display: grid;
     max-width: 70rem;
@@ -253,5 +260,20 @@ body {
     --card-active-transform: none;
     --tr-card: none;
     --tr-active: none;
+    --tr-before: none;
+  }
+
+  .card:hover {
+    outline: 2px solid var(--accent-color);
+    outline-offset: -2px;
+  }
+
+  /* Alternative Active (Click) Feedback */
+  .card:active {
+    opacity: 0.7;
+  }
+
+  .card:hover::before {
+    height: 0.25rem;
   }
 }
