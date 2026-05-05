@@ -185,7 +185,8 @@ body {
   display: block;
   margin-inline-start: auto;
   margin-block-start: auto;
-  padding-top: var(--space-md);
+  padding-block-start: var(--space-md);
+  padding-block-end: var(--space-sm);
 }
 
 /* Top Borders */
@@ -211,6 +212,9 @@ body {
 
 /* DESKTOP (Unlocked via Grid) */
 @media (min-width: 60rem) {
+  body {
+    padding: var(--space-md) var(--space-md);
+  }
   .card-grid {
     display: grid;
     max-width: 70rem;
