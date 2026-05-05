@@ -37,7 +37,7 @@
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
   --sp-h2-mb: var(--space-sm);
-  --sp-header-mb: var(--space-xl);
+  --sp-header-mb: var(--space-xxl);
   --sp-grid-gap: 1.875rem;
   --sp-card-p: var(--space-md);
   --sp-icon-mt: var(--space-md);
@@ -188,7 +188,7 @@ body {
 
 .card img {
   display: block;
-  width: clamp(3rem, 1rem + 8vw, 5rem);
+  width: clamp(2.5rem, 1rem + 8vw, 4rem);
   height: auto;
   margin-inline-start: auto;
   margin-block-start: auto;
