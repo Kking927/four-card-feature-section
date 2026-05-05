@@ -26,6 +26,7 @@
   --font-family: "Poppins", sans-serif;
 
   /* Spacing Scale */
+  --space-xxs: 0.25rem; /* 4px */
   --space-xs: 0.5rem; /* 8px */
   --space-sm: 1rem; /* 16px */
   --space-md: 1.5rem; /* 24px */
@@ -33,9 +34,9 @@
   --space-xl: 4rem; /* 64px */
 
   /* Structural Spacing */
-  --sp-h1-mb: -0.125rem;
-  --sp-h2-mb: 1.25rem;
-  --sp-header-mb: var(--space-xl);
+  --sp-h1-mb: var(--space-xxs);
+  --sp-h2-mb: var(--space-sm);
+  --sp-header-mb: var(--space-lg);
   --sp-grid-gap: 1.875rem;
   --sp-card-p: var(--space-md);
   --sp-icon-mt: var(--space-md);
@@ -60,14 +61,12 @@ body {
   font-size: var(--fs-body);
   background-color: var(--very-light-gray);
   color: var(--grayish-blue);
-  line-height: 1.6;
-
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-xl) var(--space-md);
 }
 
 /* HEADER */
@@ -77,6 +76,11 @@ body {
   margin-inline-end: auto;
   margin-block-end: var(--sp-header-mb);
   max-width: 33.75rem;
+}
+
+.header h1, 
+.header h2 {
+  line-height: 1.1;
 }
 
 .header h1 {
@@ -92,6 +96,11 @@ body {
   font-size: var(--fs-h1);
   margin-block-start: 0;
   margin-block-end: var(--sp-h2-mb);
+}
+
+.header p {
+  line-height: 1.5;
+  margin-inline: auto;
 }
 
 /* CARD GRID (Mobile First = Single Column) */
@@ -149,14 +158,16 @@ body {
 
 .card h3 {
   color: var(--very-dark-blue);
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-bold);
   font-size: var(--fs-card-title);
-  margin-block-end: var(--space-xs);
+  margin-block-end: var(--space-xxs);
 }
 
 .card p {
   opacity: 0.6;
   font-size: 0.85rem;
+  line-height: 1.5;
+  letter-spacing: 0.01rem;
 }
 
 .card img {
