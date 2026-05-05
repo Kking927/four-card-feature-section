@@ -37,9 +37,9 @@
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
   --sp-h2-mb: var(--space-sm);
-  --sp-header-mb: var(--space-sm);
+  --sp-header-mb: var(--space-xl);
   --sp-grid-gap: 1.875rem;
-  --sp-card-p: var(--space-lg);
+  --sp-card-p: var(--space-md);
   --sp-icon-mt: var(--space-md);
 
   /* Layout Constants */
@@ -73,7 +73,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--space-xs) var(--space-md);
+  padding: 0 var(--space-md);
 }
 
 /* HEADER */
@@ -81,8 +81,8 @@ body {
   text-align: center;
   margin-inline-start: auto;
   margin-inline-end: auto;
-  margin-block-end: var(--sp-header-mb);
   max-width: 33.75rem;
+  margin-block-end: var(--sp-header-mb);
 }
 
 .header h1,
@@ -125,6 +125,8 @@ body {
 
 /* CARD STYLING */
 .card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--white);
   padding: var(--sp-card-p);
   border-radius: var(--border-radius);
@@ -177,14 +179,13 @@ body {
 .card p {
   opacity: 0.6;
   font-size: 0.85rem;
-  line-height: 1.5;
-  letter-spacing: 0.01rem;
 }
 
 .card img {
   display: block;
   margin-inline-start: auto;
-  margin-block-start: var(--sp-icon-mt);
+  margin-block-start: auto;
+  padding-top: var(--space-md);
 }
 
 /* Top Borders */
@@ -215,10 +216,6 @@ body {
     min-height: 100vh;
     height: auto;
   }
-  
-  .header {
-  margin-block-end: var(--space-xxl); /* 80px for desktop */
-}
 
   .card-grid {
     display: grid;
