@@ -71,7 +71,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-xxl) var(--space-md);
 }
 
 /* HEADER */
@@ -143,9 +143,7 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding-block-start: var(--space-lg);
-  padding-inline: var(--space-sm);
-  padding-block-end: var(--space-xl);
+  padding: var(--space-md) var(--space-sm) var(--space-lg);
   height: 100%;
   text-decoration: none;
   color: inherit;
@@ -190,7 +188,6 @@ body {
 .card p {
   font-size: var(--fs-body);
   max-width: 40ch;
-  padding-block-end: var(--space-lg);
 }
 
 .card img {
