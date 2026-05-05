@@ -14,7 +14,7 @@
   /* Typography Scale (Fluid) */
   --fs-body: clamp(0.625rem, 0.84rem + 0.15vw, 0.875rem);
   --fs-h1: clamp(1.25rem, 1.28rem + 0.93vw, 2rem);
-  --fs-card-title: clamp(0.875rem, 0.84rem + 0.15vw, 0.9375rem);
+  --fs-card-title: clamp(0.9375rem, 0.84rem + 0.15vw, 1rem);
 
   /* Font weights */
   --weight-light: 200;
@@ -27,17 +27,18 @@
   --space-xxs: 0.25rem; /* 4px */
   --space-xs: 0.5rem; /* 8px */
   --space-sm: 1rem; /* 16px */
+  --space-sm-plus: 1.25rem; /* 20px */
   --space-md: 1.5rem; /* 24px */
   --space-lg: 2rem; /* 32px */
   --space-xl: 4rem; /* 64px */
-  --space-xxl: 5.5rem; /* 88px */
+  --space-xxl: 5.75rem; /* 92px */
 
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
-  --sp-h2-mb: var(--space-sm);
+  --sp-h2-mb: var(--space-sm-plus);
   --sp-header-mb: var(--space-xl);
   --sp-grid-gap: 1.875rem;
-  --sp-card-p: var(--space-md);
+  --sp-card-p: var(--space-lg);
   --sp-icon-mt: var(--space-lg);
 
   /* Layout Constants */
@@ -142,7 +143,9 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding: var(--sp-card-p);
+  padding-block-start: var(--space-lg);
+  padding-inline: var(--space-sm);
+  padding-block-end: var(--space-xl);
   height: 100%;
   text-decoration: none;
   color: inherit;
@@ -186,17 +189,16 @@ body {
 
 .card p {
   font-size: var(--fs-body);
-  /* max-width: 40ch; */
+  max-width: 40ch;
+  padding-block-end: var(--space-lg);
 }
 
 .card img {
   display: block;
-  width: clamp(2rem, 1rem + 2vw, 4rem);
+  width: clamp(2.5rem, 1.25rem + 5vw, 4rem);
   height: auto;
   margin-inline-start: auto;
   margin-block-start: auto;
-  padding-block-start: var(--sp-icon-mt);
-  padding-block-end: var(--space-md);
 }
 
 /* Top Borders */
