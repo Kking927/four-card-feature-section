@@ -33,10 +33,12 @@
   --space-xl: 4rem; /* 64px */
 
   /* Structural Spacing */
+  --sp-h1-mb: -0.125rem;
+  --sp-h2-mb: 1.25rem;
   --sp-header-mb: var(--space-xl);
   --sp-grid-gap: 1.875rem;
-  --sp-card-p: 1.875rem;
-  --sp-icon-mt: 2.5rem;
+  --sp-card-p: var(--space-md);
+  --sp-icon-mt: var(--space-md);
 
   /* Layout Constants */
   --card-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
@@ -74,20 +76,22 @@ body {
   margin-inline-start: auto;
   margin-inline-end: auto;
   margin-block-end: var(--sp-header-mb);
-  max-width: 540px;
+  max-width: 33.75rem;
 }
 
 .header h1 {
   font-weight: var(--weight-light);
   color: var(--very-dark-blue);
   font-size: var(--fs-h1);
+  margin-block-end: var(--sp-h1-mb);
 }
 
 .header h2 {
   font-weight: var(--weight-bold);
   color: var(--very-dark-blue);
   font-size: var(--fs-h1);
-  margin-block-end: var(--space-sm);
+  margin-block-start: 0;
+  margin-block-end: var(--sp-h2-mb);
 }
 
 /* CARD GRID (Mobile First = Single Column) */
@@ -96,7 +100,7 @@ body {
   flex-direction: column;
   gap: var(--sp-grid-gap);
   width: 100%;
-  max-width: 350px;
+  max-width: 22rem;
 }
 
 /* CARD STYLING */
@@ -140,7 +144,7 @@ body {
 }
 
 .card:hover::before {
-  height: 8px;
+  height: 0.5rem;
 }
 
 .card h3 {
@@ -183,7 +187,7 @@ body {
 }
 
 /* DESKTOP (Unlocked via Grid) */
-@media (min-width: 950px) {
+@media (min-width: 60rem) {
   body {
     justify-content: center;
     min-height: 100vh;
@@ -192,9 +196,10 @@ body {
   
   .card-grid {
     display: grid;
-    max-width: 1110px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr); 
+    max-width: 70rem;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
     align-items: center;
   }
 
@@ -216,5 +221,16 @@ body {
   .calculator {
     grid-column: 3;
     grid-row: 2 / span 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: 0 20px 40px -10px var(--glow-color);
   }
 }
