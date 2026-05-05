@@ -211,10 +211,7 @@ body {
 }
 
 /* DESKTOP (Unlocked via Grid) */
-@media (min-width: 60rem) {
-  body {
-    padding: var(--space-md) var(--space-md);
-  }
+@media (min-width: 60rem) { 
   .card-grid {
     display: grid;
     max-width: 70rem;
