@@ -30,7 +30,7 @@
   --space-md: 1.5rem; /* 24px */
   --space-lg: 2rem; /* 32px */
   --space-xl: 4rem; /* 64px */
-  --space-xxl: 6rem; /* 96px */
+  --space-xxl: 5.5rem; /* 88px */
 
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
@@ -38,7 +38,7 @@
   --sp-header-mb: var(--space-xl);
   --sp-grid-gap: 1.875rem;
   --sp-card-p: var(--space-md);
-  --sp-icon-mt: var(--space-md);
+  --sp-icon-mt: var(--space-lg);
 
   /* Layout Constants */
   --card-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
@@ -132,6 +132,11 @@ body {
   will-change: transform, box-shadow;
   transform: translateZ(0);
   transition: var(--tr-card);
+  width: 100%;
+  aspect-ratio: 1.4 / 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-link {
@@ -181,16 +186,17 @@ body {
 
 .card p {
   font-size: var(--fs-body);
+  /* max-width: 40ch; */
 }
 
 .card img {
   display: block;
-  width: clamp(1.5rem, 1rem + 2vw, 3.5rem);
+  width: clamp(2rem, 1rem + 2vw, 4rem);
   height: auto;
   margin-inline-start: auto;
   margin-block-start: auto;
-  padding-block-start: var(--space-md);
-  padding-block-end: var(--space-sm);
+  padding-block-start: var(--sp-icon-mt);
+  padding-block-end: var(--space-md);
 }
 
 /* Top Borders */
