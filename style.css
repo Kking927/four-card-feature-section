@@ -12,11 +12,11 @@
   --white: hsl(0, 0%, 100%);
 
   /* Typography Scale (Fluid) */
---fs-body: 0.9375rem; /* 15px - stays static for readability */
-/* Scales fluidly from 24px to 36px based on screen width */
---fs-h1: clamp(1.5rem, 1.28rem + 0.93vw, 2.25rem);
-/* Scales fluidly from 18px to 20px for a subtle growth effect */
---fs-card-title: clamp(1.125rem, 1.1rem + 0.12vw, 1.25rem);
+  --fs-body: 0.9375rem; /* 15px - stays static for readability */
+  /* Scales fluidly from 24px to 36px based on screen width */
+  --fs-h1: clamp(1.5rem, 1.28rem + 0.93vw, 2.25rem);
+  /* Scales fluidly from 18px to 20px for a subtle growth effect */
+  --fs-card-title: clamp(1.125rem, 1.1rem + 0.12vw, 1.25rem);
 
   /* Font weights */
   --weight-light: 200;
@@ -32,14 +32,15 @@
   --space-md: 1.5rem; /* 24px */
   --space-lg: 2rem; /* 32px */
   --space-xl: 4rem; /* 64px */
+  --space-xxl: 5rem; /* 80rem */
 
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xxs);
   --sp-h2-mb: var(--space-sm);
   --sp-header-mb: var(--space-lg);
   --sp-grid-gap: 1.875rem;
-  --sp-card-p: var(--space-md);
-  --sp-icon-mt: var(--space-sm);
+  --sp-card-p: var(--space-sm);
+  --sp-icon-mt: var(--space-xs);
 
   /* Layout Constants */
   --card-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
@@ -66,7 +67,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-xxl) var(--space-md);
 }
 
 /* HEADER */
@@ -78,7 +79,7 @@ body {
   max-width: 33.75rem;
 }
 
-.header h1, 
+.header h1,
 .header h2 {
   line-height: 1.1;
 }
@@ -160,7 +161,6 @@ body {
   color: var(--dark-grey);
   font-weight: var(--weight-bold);
   font-size: var(--fs-card-title);
-  margin-block-end: var(--space-xxs);
 }
 
 .card p {
@@ -173,7 +173,7 @@ body {
 .card img {
   display: block;
   margin-inline-start: auto;
- margin-block-start: var(--sp-icon-mt);
+  margin-block-start: var(--sp-icon-mt);
 }
 
 /* Top Borders */
@@ -204,7 +204,7 @@ body {
     min-height: 100vh;
     height: auto;
   }
-  
+
   .card-grid {
     display: grid;
     max-width: 70rem;
@@ -216,7 +216,7 @@ body {
 
   .supervisor {
     grid-column: 1;
-    grid-row: 2 / span 2; 
+    grid-row: 2 / span 2;
   }
 
   .team-builder {
