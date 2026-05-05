@@ -47,10 +47,16 @@
   --border-radius: 8px;
 
   /* Transitions */
-  --card-hover-transform: translateY(-8px) scale(1.015) translateZ(0);
-  --card-active-transform: translateY(-4px) scale(0.98) translateZ(0);
+  /* TRANSITION TIMING */
   --tr-card: transform 0.3s ease-out, box-shadow 0.3s ease-out;
   --tr-active: transform 0.1s ease-out;
+  --tr-card-img: transform 0.4s ease-out;
+  --card-img-transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* TRANSFORM VALUES */
+  --card-hover-transform: translateY(-8px) scale(1.015) translateZ(0);
+  --card-active-transform: translateY(-4px) scale(0.98) translateZ(0);
+  --card-img-transform: translateY(-10px);
 }
 
 /* RESET */
@@ -144,7 +150,7 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding: var(--space-md) var(--space-sm) var(--space-lg);
+  padding: var(--space-md) var(--space-sm-plus) var(--space-lg);
   height: 100%;
   text-decoration: none;
   color: inherit;
@@ -193,10 +199,16 @@ body {
 
 .card img {
   display: block;
-  width: clamp(2.5rem, 1.25rem + 5vw, 4rem);
+  width: clamp(2.5rem, 1.25rem + 5vw, 3.75rem);
   height: auto;
   margin-inline-start: auto;
   margin-block-start: auto;
+  transition: var(--card-img);
+}
+
+.card:hover img {
+  transform: var(--card-img-transform);
+  transition: var(--card-img-transition);
 }
 
 /* Top Borders */
@@ -258,7 +270,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* Targets all elements to stop browser-default smooth scrolling */
   html:focus-within {
     scroll-behavior: auto;
   }
@@ -271,7 +282,6 @@ body {
     transition-duration: 0.01ms;
   }
 
-  /* Overrides your specific variables */
   :root {
     --card-hover-transform: none;
     --card-active-transform: none;
@@ -280,7 +290,6 @@ body {
     --tr-before: none;
   }
 
-  /* Static Visual Feedback */
   .card:hover {
     outline: 2px solid var(--accent-color);
     outline-offset: -2px;
@@ -292,6 +301,14 @@ body {
   }
 
   .card:hover::before {
-    height: 0.25rem; /* Matches the base height instead of growing */
+    height: 0.25rem;
+  }
+  
+  .card:hover img {
+    transform: none;
+  }
+
+  .card img {
+    transition: none;
   }
 }
