@@ -37,7 +37,7 @@
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
   --sp-h2-mb: var(--space-sm);
-  --sp-header-mb: var(--space-md);
+  --sp-header-mb: var(--space-sm);
   --sp-grid-gap: 1.875rem;
   --sp-card-p: var(--space-lg);
   --sp-icon-mt: var(--space-md);
@@ -45,6 +45,12 @@
   /* Layout Constants */
   --card-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
   --border-radius: 8px;
+  
+  /* Transitions */
+  --card-hover-transform: translateY(-8px) scale(1.015) translateZ(0);
+  --card-active-transform: translateY(-4px) scale(0.98) translateZ(0);
+  --tr-card: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  --tr-active: transform 0.1s ease-out;
 }
 
 /* RESET */
@@ -67,7 +73,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-xs) var(--space-md);
 }
 
 /* HEADER */
@@ -130,19 +136,19 @@ body {
   -webkit-font-smoothing: antialiased;
   will-change: transform, box-shadow;
   transform: translateZ(0);
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: var(--tr-card);
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.015) translateZ(0);
+  transform: var(--card-hover-transform);
   box-shadow: 0 20px 40px -10px var(--glow-color);
   cursor: pointer;
 }
 
 .card:active {
-  transform: translateY(-4px) scale(0.98) translateZ(0);
+  transform: var(--card-active-transform);
+  transition: var(--tr-active);
   box-shadow: 0 5px 15px -5px var(--glow-color);
-  transition: transform 0.1s ease-out;
 }
 
 .card::before {
@@ -154,7 +160,7 @@ body {
   height: 0.25rem;
   background-color: var(--accent-color);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
-  transition: height 0.3s ease;
+  transition: var(--tr-before);
 }
 
 .card:hover::before {
@@ -165,6 +171,7 @@ body {
   color: var(--dark-grey);
   font-weight: var(--weight-bold);
   font-size: var(--fs-card-title);
+  margin-block-end: var(--space-xxs);
 }
 
 .card p {
@@ -172,7 +179,6 @@ body {
   font-size: 0.85rem;
   line-height: 1.5;
   letter-spacing: 0.01rem;
-  max-width: 21ch;
 }
 
 .card img {
@@ -246,12 +252,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card {
-    transition: none;
-  }
-
-  .card:hover {
-    transform: none;
-    box-shadow: 0 20px 40px -10px var(--glow-color);
+  :root {
+    --card-hover-transform: none;
+    --card-active-transform: none;
+    --tr-card: none;
+    --tr-active: none;
   }
 }
