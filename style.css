@@ -37,7 +37,7 @@
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
   --sp-h2-mb: var(--space-sm);
-  --sp-header-mb: var(--space-xl);
+  --sp-header-mb: var(--space-md);
   --sp-grid-gap: 1.875rem;
   --sp-card-p: var(--space-lg);
   --sp-icon-mt: var(--space-md);
@@ -67,7 +67,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--space-md) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
 }
 
 /* HEADER */
@@ -172,6 +172,7 @@ body {
   font-size: 0.85rem;
   line-height: 1.5;
   letter-spacing: 0.01rem;
+  max-width: 21ch;
 }
 
 .card img {
