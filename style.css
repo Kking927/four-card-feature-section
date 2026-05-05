@@ -12,11 +12,9 @@
   --white: hsl(0, 0%, 100%);
 
   /* Typography Scale (Fluid) */
-  --fs-body: 0.9375rem; /* 15px - stays static for readability */
-  /* Scales fluidly from 24px to 36px based on screen width */
-  --fs-h1: clamp(1.5rem, 1.28rem + 0.93vw, 2.25rem);
-  /* Scales fluidly from 18px to 20px for a subtle growth effect */
-  --fs-card-title: clamp(1.125rem, 1.1rem + 0.12vw, 1.25rem);
+  --fs-body: clamp(0.625rem, 0.84rem + 0.15vw, 0.875rem);
+  --fs-h1: clamp(1.25rem, 1.28rem + 0.93vw, 2rem);
+  --fs-card-title: clamp(0.875rem, 0.84rem + 0.15vw, 0.9375rem);
 
   /* Font weights */
   --weight-light: 200;
@@ -65,7 +63,6 @@
 /* BASE STYLES (Mobile First) */
 body {
   font-family: var(--font-family);
-  font-size: var(--fs-body);
   background-color: var(--very-light-gray);
   color: var(--light-gray);
   min-height: 100vh;
@@ -105,8 +102,9 @@ body {
 }
 
 .header p {
+  font-size: var(--fs-body);
   line-height: 1.5;
-  max-width: 32rem;
+  max-width: 30rem;
   margin-inline: auto;
 }
 
@@ -182,16 +180,17 @@ body {
 }
 
 .card p {
-  font-size: clamp(0.8125rem, 0.79rem + 0.1vw, 0.9375rem);
+  font-size: var(--fs-body);
 }
 
 .card img {
   display: block;
-  width: clamp(2rem, 1rem + 8vw, 3rem);
+  width: clamp(1.5rem, 1rem + 2vw, 3.5rem);
   height: auto;
   margin-inline-start: auto;
   margin-block-start: auto;
   padding-block-start: var(--space-md);
+  padding-block-end: var(--space-sm);
 }
 
 /* Top Borders */
@@ -253,6 +252,20 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Targets all elements to stop browser-default smooth scrolling */
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+
+  /* Overrides your specific variables */
   :root {
     --card-hover-transform: none;
     --card-active-transform: none;
@@ -261,17 +274,18 @@ body {
     --tr-before: none;
   }
 
+  /* Static Visual Feedback */
   .card:hover {
     outline: 2px solid var(--accent-color);
     outline-offset: -2px;
   }
 
-  /* Alternative Active (Click) Feedback */
   .card:active {
     opacity: 0.7;
+    background-color: var(--very-light-gray);
   }
 
   .card:hover::before {
-    height: 0.25rem;
+    height: 0.25rem; /* Matches the base height instead of growing */
   }
 }
