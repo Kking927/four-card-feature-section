@@ -2,12 +2,12 @@
   /* Primary Colors */
   --red: hsl(0, 78%, 62%);
   --cyan: hsl(180, 62%, 55%);
-  --blue: hsl(212, 86%, 64%);
   --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
 
   /* Neutrals */
-  --very-dark-blue: hsl(234, 12%, 34%);
-  --grayish-blue: hsl(212, 6%, 44%);
+  --dark-grey: hsl(234, 12%, 34%);
+  --light-grey: hsl(212, 6%, 44%);
   --very-light-gray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
 
@@ -39,7 +39,7 @@
   --sp-header-mb: var(--space-lg);
   --sp-grid-gap: 1.875rem;
   --sp-card-p: var(--space-md);
-  --sp-icon-mt: var(--space-md);
+  --sp-icon-mt: var(--space-sm);
 
   /* Layout Constants */
   --card-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
@@ -60,7 +60,7 @@ body {
   font-family: var(--font-family);
   font-size: var(--fs-body);
   background-color: var(--very-light-gray);
-  color: var(--grayish-blue);
+  color: var(--light-grey);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -85,14 +85,14 @@ body {
 
 .header h1 {
   font-weight: var(--weight-light);
-  color: var(--very-dark-blue);
+  color: var(--light-grey);
   font-size: var(--fs-h1);
   margin-block-end: var(--sp-h1-mb);
 }
 
 .header h2 {
   font-weight: var(--weight-bold);
-  color: var(--very-dark-blue);
+  color: var(--dark-grey);
   font-size: var(--fs-h1);
   margin-block-start: 0;
   margin-block-end: var(--sp-h2-mb);
@@ -157,7 +157,7 @@ body {
 }
 
 .card h3 {
-  color: var(--very-dark-blue);
+  color: var(--dark-grey);
   font-weight: var(--weight-bold);
   font-size: var(--fs-card-title);
   margin-block-end: var(--space-xxs);
@@ -173,7 +173,7 @@ body {
 .card img {
   display: block;
   margin-inline-start: auto;
-  margin-block-start: var(--sp-icon-mt);
+ margin-block-start: var(--sp-icon-mt);
 }
 
 /* Top Borders */
