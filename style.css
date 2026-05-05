@@ -39,7 +39,7 @@
   --sp-h2-mb: var(--space-sm);
   --sp-header-mb: var(--space-lg);
   --sp-grid-gap: 1.875rem;
-  --sp-card-p: var(--space-sm);
+  --sp-card-p: var(--space-md);
   --sp-icon-mt: var(--space-xs);
 
   /* Layout Constants */
