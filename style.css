@@ -40,7 +40,6 @@
   --sp-header-mb: var(--space-xl);
   --sp-grid-gap: 1.875rem;
   --sp-card-p: var(--space-lg);
-  --sp-icon-mt: var(--space-lg);
 
   /* Layout Constants */
   --card-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
@@ -150,7 +149,7 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding: var(--space-lg);
+  padding: var(--sp-card-p);
   height: 100%;
   text-decoration: none;
   color: inherit;
