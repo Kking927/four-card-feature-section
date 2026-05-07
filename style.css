@@ -14,7 +14,7 @@
   /* Typography Scale (Fluid) */
   --fs-header-p: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --fs-h1: clamp(1.25rem, 1.28rem + 0.93vw, 2rem);
-  --fs-card-title: clamp(0.8125rem, 0.76rem + 0.18vw, 0.9375rem);
+  --fs-card-title: clamp(0.875rem, 0.82rem + 0.2vw, 1rem);
   --fs-card-p: clamp(0.6875rem, 0.66rem + 0.08vw, 0.75rem);
 
   /* Font weights */
@@ -32,7 +32,7 @@
   --space-md: 1.5rem; /* 24px */
   --space-lg: 2rem; /* 32px */
   --space-xl: 4rem; /* 64px */
-  --space-xxl: 6rem; /* 96px */
+  --space-xxl: 6.25rem; /* 100px */
 
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
@@ -139,9 +139,7 @@ body {
   will-change: transform, box-shadow;
   transform: translateZ(0);
   transition: var(--tr-card);
-  width: 100%;
-  aspect-ratio: 1.4 / 1;
-  min-height: 0;
+  
   display: flex;
   flex-direction: column;
 }
@@ -233,10 +231,6 @@ body {
 
 /* DESKTOP (Unlocked via Grid) */
 @media (min-width: 60rem) {
-  body {
-    padding: var(--space-xxl) var(--space-md);
-  }
-
   .card-grid {
     display: grid;
     max-width: 70rem;
