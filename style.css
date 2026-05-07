@@ -14,7 +14,7 @@
   /* Typography Scale (Fluid) */
   --fs-header-p: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --fs-h1: clamp(1.25rem, 1.28rem + 0.93vw, 2rem);
-  --fs-card-title: clamp(0.8125rem, 0.76rem + 0.18vw, 0.9375rem)
+  --fs-card-title: clamp(0.8125rem, 0.76rem + 0.18vw, 0.9375rem);
   --fs-card-p: clamp(0.6875rem, 0.66rem + 0.08vw, 0.75rem);
 
   /* Font weights */
