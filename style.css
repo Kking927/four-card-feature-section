@@ -14,8 +14,8 @@
   /* Typography Scale (Fluid) */
   --fs-header-p: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --fs-h1: clamp(1.25rem, 1.28rem + 0.93vw, 2rem);
-  --fs-card-title: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
-  --fs-card-p: clamp(0.625rem, 0.84rem + 0.15vw, 0.875rem);
+  --fs-card-title: clamp(0.8125rem, 0.76rem + 0.18vw, 0.9375rem)
+  --fs-card-p: clamp(0.6875rem, 0.66rem + 0.08vw, 0.75rem);
 
   /* Font weights */
   --weight-light: 200;
@@ -150,7 +150,7 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding: var(--space-md);
+  padding: var(--space-lg);
   height: 100%;
   text-decoration: none;
   color: inherit;
