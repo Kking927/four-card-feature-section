@@ -139,8 +139,7 @@ body {
   transform: translateZ(0);
   transition: var(--tr-card);
   width: 100%;
-  aspect-ratio: 1.4 / 1;
-  min-height: 0;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
 }
@@ -148,7 +147,8 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding: var(--space-sm) var(--space-md) var(--space-md);
+  padding-block: var(--space-lg);
+  padding-inline: var(--space-md);
   height: 100%;
   text-decoration: none;
   color: inherit;
@@ -192,15 +192,14 @@ body {
 
 .card p {
   font-size: var(--fs-card-p);
+  margin-block-end: var(--space-lg);
   max-width: 40ch;
 }
 
 .card img {
   display: block;
-  width: clamp(2.5rem, 1.25rem + 5vw, 3.75rem);
-  height: auto;
-  margin-inline-start: auto;
   margin-block-start: auto;
+  margin-inline-start: auto;
   transition: var(--card-img);
 }
 
