@@ -33,7 +33,7 @@
   --space-md-plus: 1.75rem;
   --space-lg: 2rem; /* 32px */
   --space-xl: 4rem; /* 64px */
-  --space-xxl: 6rem; /* 96px */
+  --space-xxl: 6.125rem; /* 98px */
 
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
