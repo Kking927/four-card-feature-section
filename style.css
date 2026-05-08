@@ -30,9 +30,10 @@
   --space-sm: 1rem; /* 16px */
   --space-sm-plus: 1.25rem; /* 20px */
   --space-md: 1.5rem; /* 24px */
+  --space-md-plus: 1.75rem;
   --space-lg: 2rem; /* 32px */
   --space-xl: 4rem; /* 64px */
-  --space-xxl: 6.25rem; /* 100px */
+  --space-xxl: 6rem; /* 96px */
 
   /* Structural Spacing */
   --sp-h1-mb: var(--space-xs);
@@ -147,7 +148,7 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding-block: var(--space-lg);
+  padding-block: var(--space-md-plus);
   padding-inline: var(--space-md);
   height: 100%;
   text-decoration: none;
