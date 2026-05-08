@@ -149,8 +149,7 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding-block: var(--space-md-plus);
-  padding-inline: var(--space-md);
+  padding: var(--space-md-plus);
   height: 100%;
   text-decoration: none;
   color: inherit;
