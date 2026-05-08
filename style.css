@@ -27,12 +27,13 @@
   /* Spacing Scale */
   --space-xxs: 0.25rem; /* 4px */
   --space-xs: 0.5rem; /* 8px */
-  --space-xs-plus: .75rem; /* 12px */
+  --space-xs-plus: 0.625rem; /* 10px */
   --space-sm: 1rem; /* 16px */
   --space-sm-plus: 1.25rem; /* 20px */
   --space-md: 1.5rem; /* 24px */
   --space-md-plus: 1.75rem;
   --space-lg: 2rem; /* 32px */
+  --space-lg-plus: 2.5rem; /* 40px */
   --space-xl: 4rem; /* 64px */
   --space-xxl: 6.125rem; /* 98px */
 
@@ -149,7 +150,7 @@ body {
 .card-link {
   display: flex;
   flex-direction: column;
-  padding: var(--space-md-plus);
+  padding: var(--space-lg);
   height: 100%;
   text-decoration: none;
   color: inherit;
@@ -193,14 +194,14 @@ body {
 
 .card p {
   font-size: var(--fs-card-p);
-  margin-block-end: var(--space-lg);
+  margin-block-end: var(--space-lg-plus);
   max-width: 40ch;
 }
 
 .card img {
   display: block;
   height: auto;
-  inline-size: clamp(2.5rem, 2.1rem + 2vw, 3.5rem);
+  inline-size: clamp(2.5rem, 2.2rem + 1.5vw, 3.25rem);
   block-size: auto;
   margin-block-start: auto;
   margin-inline-start: auto;
