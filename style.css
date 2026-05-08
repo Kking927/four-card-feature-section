@@ -192,7 +192,7 @@ body {
 
 .card p {
   font-size: var(--fs-card-p);
-  margin-block-end: var(--space-lg);
+  margin-block-end: var(--space-md);
   max-width: 40ch;
 }
 
